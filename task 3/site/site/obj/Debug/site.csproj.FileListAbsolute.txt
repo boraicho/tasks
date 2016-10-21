@@ -31,3 +31,36 @@ D:\Git\task 3\site\site\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.x
 D:\Git\task 3\site\site\obj\Debug\site.csprojResolveAssemblyReference.cache
 D:\Git\task 3\site\site\obj\Debug\site.dll
 D:\Git\task 3\site\site\obj\Debug\site.pdb
+D:\My tasks\task 3\site\site\bin\ApplicationInsights.config
+D:\My tasks\task 3\site\site\bin\roslyn\csc.exe
+D:\My tasks\task 3\site\site\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\My tasks\task 3\site\site\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\My tasks\task 3\site\site\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\My tasks\task 3\site\site\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\My tasks\task 3\site\site\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\My tasks\task 3\site\site\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\My tasks\task 3\site\site\bin\roslyn\System.Collections.Immutable.dll
+D:\My tasks\task 3\site\site\bin\roslyn\System.Reflection.Metadata.dll
+D:\My tasks\task 3\site\site\bin\roslyn\vbc.exe
+D:\My tasks\task 3\site\site\bin\roslyn\VBCSCompiler.exe
+D:\My tasks\task 3\site\site\bin\roslyn\VBCSCompiler.exe.config
+D:\My tasks\task 3\site\site\bin\site.dll.config
+D:\My tasks\task 3\site\site\bin\site.dll
+D:\My tasks\task 3\site\site\bin\site.pdb
+D:\My tasks\task 3\site\site\bin\Microsoft.AI.Agent.Intercept.dll
+D:\My tasks\task 3\site\site\bin\Microsoft.AI.DependencyCollector.dll
+D:\My tasks\task 3\site\site\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\My tasks\task 3\site\site\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\My tasks\task 3\site\site\bin\Microsoft.AI.Web.dll
+D:\My tasks\task 3\site\site\bin\Microsoft.AI.WindowsServer.dll
+D:\My tasks\task 3\site\site\bin\Microsoft.ApplicationInsights.dll
+D:\My tasks\task 3\site\site\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\My tasks\task 3\site\site\bin\Microsoft.AI.DependencyCollector.xml
+D:\My tasks\task 3\site\site\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\My tasks\task 3\site\site\bin\Microsoft.AI.Web.xml
+D:\My tasks\task 3\site\site\bin\Microsoft.AI.WindowsServer.xml
+D:\My tasks\task 3\site\site\bin\Microsoft.ApplicationInsights.xml
+D:\My tasks\task 3\site\site\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\My tasks\task 3\site\site\obj\Debug\site.csprojResolveAssemblyReference.cache
+D:\My tasks\task 3\site\site\obj\Debug\site.dll
+D:\My tasks\task 3\site\site\obj\Debug\site.pdb

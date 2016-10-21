@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Index</title>
 	<meta charset="utf-8" />
     <link href="styles/ResetCss.css" rel="stylesheet" />
     <link href="styles/StyleSheet1.css" rel="stylesheet" />
@@ -10,20 +10,23 @@
     <div class="container">
         <header class="header-background-style">
             <div class="header-style">
+                <!-- @TODO class -->
                 <p>Call us now: 800-567-8888</p>
+
                 <div class="logo"></div>
                 <form class="top-nav">
-                    <label><input type="radio" name="menu" checked/><span>Home</span></label>
-                    <label><input type="radio" name="menu" /><span>About Us</span></label>
-                    <label><input type="radio" name="menu" /><span>Services</span></label>
-                    <label><input type="radio" name="menu" /><span>Solutions</span></label>
-                    <label><input type="radio" name="menu" /><span>Support</span></label>
-                    <label><input type="radio" name="menu" /><span>Contact Us</span></label>
+                    <label class="top-nav-label"><input type="radio" name="menu" checked /><span>Home</span></label>
+                    <label class="top-nav-label"><input type="radio" name="menu" /><span>About Us</span></label>
+                    <label class="top-nav-label"><input type="radio" name="menu" /><span>Services</span></label>
+                    <label class="top-nav-label"><input type="radio" name="menu" /><span>Solutions</span></label>
+                    <label class="top-nav-label"><input type="radio" name="menu" /><span>Support</span></label>
+                    <label class="top-nav-label"><input type="radio" name="menu" /><span>Contact Us</span></label>
                 </form>
                 <div class="header-text-container">
-                    <p class="first-header-override">FRESH IDEAS</p>
+                    <p class="first-header-override">FRESH IDEAS</p> <!--h1-->
                     <p class="second-header-override">FOR YOU </p>
-                    <p class="text-p-override"> Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
+                    <p class="text-p-override">
+                        Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
                         Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum.
                     </p>
                     <a href="#"><span>Click Here</span></a>
@@ -31,28 +34,77 @@
             </div>
         </header>
         <main class="main-position">
-            <header>
-                <p>LET'S CREATE YOUR COMPANY'S GROWTH STRATEGY TOGETHER!</p>
-                <p>We develop personal strategy for your business growing</p>
+            <header><!-- div -->
+                <p class="header-main-article">LET'S CREATE YOUR COMPANY'S GROWTH STRATEGY TOGETHER!</p>
+                <p class="text-main-article">We develop personal strategy for your business growing</p>
             </header>
             <div class="other-panel">
                 <form class="input-panel-position">
+                    <!-- @TODO class for input -->
                     <div class="login-top"><span>USER LOGIN</span></div>
                     <label for="login">username <sub>*</sub></label>
-                    <input type="text" name="login" value="enter your name" id="login" />
+                    <input type="text" name="login" value="" placeholder="enter your name" id="login" />
                     <label for="password">password <sub>*</sub></label>
-                    <input type="password" name="password" value="password" id="password" />
+                    <input type="password" name="password" value="" placeholder="password" id="password" />
                     <button type="submit">Login</button>
                     <a href="#"><img src="images/orange_dot.jpg"/>Create new account</a>
-                    <a href="#"><img src="images/orange_dot.jpg" />Request new password</a>
+                    <a href="#"><img src="images/orange_dot.jpg"/>Request new password</a>
                 </form>
                 <section class="news-position">
-                    <div class="news-top"></div>
+                    <div class="news-top"><span>latest news</span></div>
+                    <div class="news-container clearfix">
+                        <div class="left-img-news left-img-news-first"></div>
+                        <div class="header-news">FEB 28,2010</div>
+                        <p class="text-news">
+                            lorem ipsum dolor sit amet consecteturadipiscing elit. Donec molestie. Sed aliquams.
+                        </p>
+                        <a href="#" class="link-news"><img src="images/orange_dot.jpg" />more</a>
+                    </div>
+                    <div class="news-container">
+                        <div class="left-img-news left-img-news-second"></div>
+                        <div class="header-news">FEB 28,2010</div>
+                        <p class="text-news">
+                            lorem ipsum dolor sit amet consecteturadipiscing elit. Donec molestie. Sed aliquams.
+                        </p>
+                        <a href="#" class="link-news"><img src="images/orange_dot.jpg" />more</a>
+                    </div>
                 </section>
             </div>
             <div class="articles">
-                <article class="article-first"></article>
-                <article class="article-second"></article>
+                <article class="article-first">
+                    <p class="header-first-article">WELCOME<span class="little-text-header">TO OUR COMPANY WEBSITE!</span></p>
+                    <p class="color-text-header">LOREM IPSUM DOLOR SIT AMET, CONSECTETUERADIOISCING ELIT. DONEC MOLESTIE.</p>
+                    <p class="content-first-article">
+                        Phasellus sollicitudin. Vestibulum condimentum facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero. Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo. Praesent aliquet pretium erat. Praesent non odio. Pellentesque a magna a mauris vulputate lacinia. Aenean viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aliquam lacus.
+                    </p>
+                    <a href="#"><img src="images/orange_dot.jpg" />Read more</a>
+                </article>
+                <article class="article-second">
+                    <p class="header-second-article">WORK SMARTER WITH OUR BUSINESS COMPANY</p>
+                    <p class="text-second-article">
+                        Phasellus sollicitudin. Vestibulum condimentum facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero. Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo. Praesent aliquet pretium erat.
+                    </p>
+                    <div class="first-container-second-article clearfix">
+                        <div class="left-img left-img-first"></div>
+                        <div class="container-content">
+                            <p class="header-container">Phasellus sollicitudin. Vestibulum condimentum facilisis nulla.</p>
+                            <p class="text-container">
+                                Phasellus sollicitudin. Vestibulum condimentum facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero. Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo. Praesent aliquet pretium erat.
+                            </p>
+                            <a href="#" class="text-link-bottom"><img src="images/orange_dot.jpg" />Read more</a>
+                        </div>
+                    </div>
+                    <div class="second-container-second-article clearfix">
+                        <div class="left-img left-img-second"></div>
+                        <div class="container-content">
+                            <p class="header-container">Phasellus sollicitudin. Vestibulum condimentum facilisis nulla.</p>
+                            <p class="text-container">
+                                Phasellus sollicitudin. Vestibulum condimentum facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero. Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo. Praesent aliquet pretium erat.
+                            </p>
+                            <a href="#" class="text-link-bottom"><img src="images/orange_dot.jpg" />Read more</a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </main>
         <footer>
