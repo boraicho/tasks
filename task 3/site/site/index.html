@@ -47,8 +47,8 @@
                     <label for="password">password <sub>*</sub></label>
                     <input type="password" name="password" value="" placeholder="password" id="password" />
                     <button type="submit">Login</button>
-                    <a href="#"><img src="images/orange_dot.jpg"/>Create new account</a>
-                    <a href="#"><img src="images/orange_dot.jpg"/>Request new password</a>
+                    <a href="#" class="a-override"><div class="orange-dot"></div>Create new account</a>
+                    <a href="#" class="a-override"><div class="orange-dot"></div>Request new password</a>
                 </form>
                 <section class="news-position">
                     <div class="news-top"><span>latest news</span></div>
@@ -58,15 +58,15 @@
                         <p class="text-news">
                             lorem ipsum dolor sit amet consecteturadipiscing elit. Donec molestie. Sed aliquams.
                         </p>
-                        <a href="#" class="link-news"><img src="images/orange_dot.jpg" />more</a>
+                        <a href="#" class="link-news a-override"><div class="orange-dot"></div>more</a>
                     </div>
-                    <div class="news-container">
+                    <div class="news-container news-container-position-override">
                         <div class="left-img-news left-img-news-second"></div>
                         <div class="header-news">FEB 28,2010</div>
                         <p class="text-news">
                             lorem ipsum dolor sit amet consecteturadipiscing elit. Donec molestie. Sed aliquams.
                         </p>
-                        <a href="#" class="link-news"><img src="images/orange_dot.jpg" />more</a>
+                        <a href="#" class="link-news a-override"><div class="orange-dot"></div>more</a>
                     </div>
                 </section>
             </div>
@@ -77,7 +77,7 @@
                     <p class="content-first-article">
                         Phasellus sollicitudin. Vestibulum condimentum facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero. Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo. Praesent aliquet pretium erat. Praesent non odio. Pellentesque a magna a mauris vulputate lacinia. Aenean viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aliquam lacus.
                     </p>
-                    <a href="#"><img src="images/orange_dot.jpg" />Read more</a>
+                    <a href="#" class="a-override"><div class="green-dot"></div>Read more</a>
                 </article>
                 <article class="article-second">
                     <p class="header-second-article">WORK SMARTER WITH OUR BUSINESS COMPANY</p>
@@ -91,7 +91,7 @@
                             <p class="text-container">
                                 Phasellus sollicitudin. Vestibulum condimentum facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero. Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo. Praesent aliquet pretium erat.
                             </p>
-                            <a href="#" class="text-link-bottom"><img src="images/orange_dot.jpg" />Read more</a>
+                            <a href="#" class="a-override text-link-bottom"><div class="green-dot"></div>Read more</a>
                         </div>
                     </div>
                     <div class="second-container-second-article clearfix">
@@ -101,14 +101,22 @@
                             <p class="text-container">
                                 Phasellus sollicitudin. Vestibulum condimentum facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero. Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo. Praesent aliquet pretium erat.
                             </p>
-                            <a href="#" class="text-link-bottom"><img src="images/orange_dot.jpg" />Read more</a>
+                            <a href="#" class="a-override text-link-bottom"><div class="green-dot"></div>Read more</a>
                         </div>
                     </div>
                 </article>
             </div>
         </main>
         <footer>
-
+            <form class="footer-nav">
+                <label class="footer-nav-label"><input type="radio" name="menu" checked /><span>Home</span></label>
+                <label class="footer-nav-label"><input type="radio" name="menu" /><span>About Us</span></label>
+                <label class="footer-nav-label"><input type="radio" name="menu" /><span>Services</span></label>
+                <label class="footer-nav-label"><input type="radio" name="menu" /><span>Solutions</span></label>
+                <label class="footer-nav-label"><input type="radio" name="menu" /><span>Support</span></label>
+                <label class="footer-nav-label"><input type="radio" name="menu" /><span>Contact Us</span></label>
+            </form>
+            <span class="coopyright-style"> Coopyright &copy; Domain Name, All rights reserved</span>
         </footer>
     </div>
 </body>

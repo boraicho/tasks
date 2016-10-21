@@ -26,6 +26,22 @@ body{
     display:table;
     clear:both;
 }
+.orange-dot{
+    width: 4px;
+    height: 6px;
+    display:inline-block;
+    text-align:center;
+    margin-right:5px;
+    background: url(data:image/jpg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAZAAA/+4ADkFkb2JlAGTAAAAAAf/bAIQAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQICAgICAgICAgICAwMDAwMDAwMDAwEBAQEBAQECAQECAgIBAgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD/8AAEQgABgAEAwERAAIRAQMRAf/EAGUAAQAAAAAAAAAAAAAAAAAAAAkBAQEAAAAAAAAAAAAAAAAAAAgJEAAAAwkAAAAAAAAAAAAAAAA0N0gAImUWJheHOFgRAAADBwUBAAAAAAAAAAAAADM1RwAiFDRkJVaEhRY2F0j/2gAMAwEAAhEDEQA/AHkRXfFHfDGWJQ2aNE0awCQoI+02vnf0hAsO3OF7CYmN0CoQHmc618GWPJ9BEEsjI28SrGdb/9k=);
+}
+.green-dot{
+    width: 4px;
+    height: 6px;
+    display:inline-block;
+    text-align:center;
+    margin-right:5px;
+    background: url(data:image/jpg;base64,/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAZAAA/+4ADkFkb2JlAGTAAAAAAf/bAIQAAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQICAgICAgICAgICAwMDAwMDAwMDAwEBAQEBAQECAQECAgIBAgIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD/8AAEQgABgAEAwERAAIRAQMRAf/EAGAAAQAAAAAAAAAAAAAAAAAAAAoBAQEAAAAAAAAAAAAAAAAAAAAJEAAAAwkAAAAAAAAAAAAAAAA0NkgAImQWJoYXN1gRAAAEBwAAAAAAAAAAAAAAAAAzNUciFGQlhVYX/9oADAMBAAIRAxEAPwBWCZ8oJz5av+Xt3Ho9VEHgA7zTzYPoTGalkZZeUFC5l0ZEQD//2Q==);
+}
 /*Header*/
 .container>header{
     width:auto;
@@ -175,6 +191,15 @@ body{
     color:#939da7;
     padding:3px 0 0 32px;
 }
+.a-override {
+    text-decoration: none;
+    color: #d67504;
+    font-size: 12px;
+}
+.a-override:hover
+{
+    color:#94a640;
+}
 /*Articles*/
 .article-first{
     width:auto;
@@ -203,19 +228,14 @@ body{
     letter-spacing:1.1px;
 }
 .content-first-article{
-    padding: 18px 30px 0 30px;
-    font-size:13px;
-    line-height:17px;
+    padding: 15px 30px 0 30px;
+    font-size: 13px;
+    line-height: 18px;
 }
 .article-first>a{
     display: block;
-    font-size: 11px;
-    margin: 22px 0 0 31px;
-    text-decoration: none;
-    color: #d67504;
-}
-.article-first>a>img{
-    margin-right: 5px;
+    margin: 20px 0 0 30px;
+
 }
 /*Second article*/
 .header-second-article{
@@ -331,12 +351,7 @@ body{
 }
 .input-panel-position>a{
     display:block;
-    font-size:11px;
     margin: 15px 0 -7px 35px;
-    text-decoration:none;
-}
-.input-panel-position>a>img{
-    margin-right: 5px;
 }
 /*Right news*/
 .news-position{
@@ -364,11 +379,11 @@ body{
     color:#e1800e;
 }
 .left-img-news{
-    width:24px;
-    height:26px;
+    width: 24px;
+    height: 26px;
     background-image:url(../images/green_right.jpg);
-    float:left;
-    margin-left:19px;
+    float: left;
+    margin-left: 19px;
 }
 .header-news{
     padding: 11px 0 0 53px;
@@ -382,12 +397,64 @@ body{
     line-height: 16px;
 }
 .link-news{
-
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 54px;
+    margin-top: 8px;
+}
+.news-container-position-override{
+    margin-top:17px;
 }
 /*footer*/
 .container > footer {
-    width:auto;
-    height:122px;
-    margin-top:15px;
+    width: auto;
+    height: 122px;
+    margin-top: 15px;
     background: #fff url(../images/footer_bg.jpg) repeat-x;
+}
+.footer-nav{
+    padding: 55px 0 0 475px;
+    font-size: 12px;
+    width: 490px;
+    font-weight: bold;
+    color:#d67504;
+    float:left;
+}
+.footer-nav-label>input[type="radio"]{
+    display:none;
+}
+.footer-nav-label{
+    display:inline-block;
+    height:12px;
+    text-align:center;
+    -webkit-user-select:none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+}
+.footer-nav-label:not(:first-child){
+    border-left: 1px solid #d67504;
+}
+.footer-nav-label>span{
+    display:inline-block;
+    padding: 0 13px;
+    text-align:center;
+}
+.footer-nav-label>input:checked + span {
+  color: #94a640;
+}
+.footer-nav-label:last-child >input:checked + span {
+  color: #94a640;
+}
+.footer-nav-label>input + span:hover {
+  color: #94a640;
+}
+.footer-nav-label:last-child >input + span:hover {
+  color: #94a640;
+}
+.coopyright-style{
+    display: block;
+    padding-top: 55px;
+    margin-left: 1035px;
+    font-size: 12px;
 }
