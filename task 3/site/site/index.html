@@ -4,15 +4,13 @@
     <title>Index</title>
 	<meta charset="utf-8" />
     <link href="styles/ResetCss.css" rel="stylesheet" />
-    <link href="styles/StyleSheet1.css" rel="stylesheet" />
+    <link href="styles/styles.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
         <header class="header-background-style">
             <div class="header-style">
-                <!-- @TODO class -->
-                <p>Call us now: 800-567-8888</p>
-
+                <p class="phone">Call us now: 800-567-8888</p>
                 <div class="logo"></div>
                 <form class="top-nav">
                     <label class="top-nav-label"><input type="radio" name="menu" checked /><span>Home</span></label>
@@ -23,32 +21,33 @@
                     <label class="top-nav-label"><input type="radio" name="menu" /><span>Contact Us</span></label>
                 </form>
                 <div class="header-text-container">
-                    <p class="first-header-override">FRESH IDEAS</p> <!--h1-->
+                    <h1 class="first-header-override">FRESH IDEAS</h1>
                     <p class="second-header-override">FOR YOU </p>
                     <p class="text-p-override">
                         Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
                         Placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum.
                     </p>
-                    <a href="#"><span>Click Here</span></a>
+                    <div class="ie-mask-btn">
+                        <a href="#"class="ie-style-btn style-btn">Click Here</a>
+                    </div>
                 </div>
             </div>
         </header>
         <main class="main-position">
-            <header><!-- div -->
+            <div class="main-header">
                 <p class="header-main-article">LET'S CREATE YOUR COMPANY'S GROWTH STRATEGY TOGETHER!</p>
                 <p class="text-main-article">We develop personal strategy for your business growing</p>
-            </header>
+            </div>
             <div class="other-panel">
                 <form class="input-panel-position">
-                    <!-- @TODO class for input -->
                     <div class="login-top"><span>USER LOGIN</span></div>
                     <label for="login">username <sub>*</sub></label>
-                    <input type="text" name="login" value="" placeholder="enter your name" id="login" />
+                    <input class="input-override" type="text" name="login" value="" placeholder="enter your name" id="login" />
                     <label for="password">password <sub>*</sub></label>
-                    <input type="password" name="password" value="" placeholder="password" id="password" />
-                    <button type="submit">Login</button>
-                    <a href="#" class="a-override"><div class="orange-dot"></div>Create new account</a>
-                    <a href="#" class="a-override"><div class="orange-dot"></div>Request new password</a>
+                    <input class="input-override" type="password" name="password" value="" placeholder="password" id="password" />
+                    <div class="ie-login-mask-btn"><button type="submit" class="login-btn">Login</button></div>
+                    <a href="#" class="a-override news-a-override"><div class="orange-dot"></div>Create new account</a>
+                    <a href="#" class="a-override news-a-override"><div class="orange-dot"></div>Request new password</a>
                 </form>
                 <section class="news-position">
                     <div class="news-top"><span>latest news</span></div>
@@ -77,7 +76,7 @@
                     <p class="content-first-article">
                         Phasellus sollicitudin. Vestibulum condimentum facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero. Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo. Praesent aliquet pretium erat. Praesent non odio. Pellentesque a magna a mauris vulputate lacinia. Aenean viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Aliquam lacus.
                     </p>
-                    <a href="#" class="a-override"><div class="green-dot"></div>Read more</a>
+                    <a href="#" class="a-override a-bold"><div class="green-dot"></div>Read more</a>
                 </article>
                 <article class="article-second">
                     <p class="header-second-article">WORK SMARTER WITH OUR BUSINESS COMPANY</p>
@@ -87,21 +86,21 @@
                     <div class="first-container-second-article clearfix">
                         <div class="left-img left-img-first"></div>
                         <div class="container-content">
-                            <p class="header-container">Phasellus sollicitudin. Vestibulum condimentum facilisis nulla.</p>
+                            <a href="#" class="header-container">Phasellus sollicitudin. Vestibulum condimentum facilisis nulla.</a>
                             <p class="text-container">
                                 Phasellus sollicitudin. Vestibulum condimentum facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero. Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo. Praesent aliquet pretium erat.
                             </p>
-                            <a href="#" class="a-override text-link-bottom"><div class="green-dot"></div>Read more</a>
+                            <a href="#" class="a-override text-link-bottom a-bold"><div class="green-dot"></div>Read more</a>
                         </div>
                     </div>
                     <div class="second-container-second-article clearfix">
                         <div class="left-img left-img-second"></div>
                         <div class="container-content">
-                            <p class="header-container">Phasellus sollicitudin. Vestibulum condimentum facilisis nulla.</p>
+                            <a href="" class="header-container">Phasellus sollicitudin. Vestibulum condimentum facilisis nulla.</a>
                             <p class="text-container">
                                 Phasellus sollicitudin. Vestibulum condimentum facilisis nulla. In hac habitasse platea dictumst. Nulla nonummy. Cras quis libero. Cras venenatis. Aliquam posuere lobortis pede. Nullam fringilla urna id leo. Praesent aliquet pretium erat.
                             </p>
-                            <a href="#" class="a-override text-link-bottom"><div class="green-dot"></div>Read more</a>
+                            <a href="#" class="a-override text-link-bottom a-bold"><div class="green-dot"></div>Read more</a>
                         </div>
                     </div>
                 </article>

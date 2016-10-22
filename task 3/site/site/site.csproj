@@ -125,7 +125,7 @@
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="styles\normalize.css" />
     <Content Include="styles\ResetCss.css" />
-    <Content Include="styles\StyleSheet1.css" />
+    <Content Include="styles\styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
