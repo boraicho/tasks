@@ -1,0 +1,70 @@
+﻿@model IEnumerable<UsersAndAwards.ViewModels.AppUser.AppUsersVM>
+
+@{
+    ViewBag.Title = "Users";
+}
+@section scripts
+    { 
+    <script src="~/MyScripts/ModalWindow.js"></script>
+    }
+@section navigation
+{
+    <li>@Html.ActionLink("Users list","Index")</li>
+}
+<h2>Users</h2>
+@Html.ActionLink("Save in file", "SaveUsersInFile") | @Html.ActionLink("Create New", "Create")
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Birthdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Awards)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <div class="pull-left" style="margin-right: 10px">
+                <img class="" width="75" height="75"
+                     src="@Url.Action("GetImage","Users", new {id = item.Id})" />
+            </div>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Birthdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.ActionLink("Change", "Change", new { item.Id}) | @Html.ActionLink("Delete", "Delete", new { item.Id }) | @Html.ActionLink("All awards", "Awards", new { item.Id })
+        </td>
+        <td>
+            <div class="image-awards" style="margin-right: 10px">
+                @foreach (var award in item.Awards)
+                {
+                        <img class="image-award" width="50" height="50"
+                             src="@Url.Action("GetImage","Awards", new {id = award.Id})" title="@award.Title" data-id="@award.Id"/>
+                }
+            </div>
+        </td>
+    </tr>
+}
+
+</table>
+@Html.Partial("_ModalPartial")

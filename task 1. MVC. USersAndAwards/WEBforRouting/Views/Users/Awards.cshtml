@@ -1,0 +1,50 @@
+﻿@model IEnumerable<UsersAndAwards.Entities.AwardDTO>
+
+@{
+    ViewBag.Title = "User's awards";
+}
+@section navigation
+{
+    <li>@Html.ActionLink("Users list", "Index")</li>
+    <li>@Html.ActionLink("User's awards list", "Awards")</li>
+}
+<form action="/award-user/add" method="post">
+    @Html.DropDownList("AllAwards")
+    @Html.Hidden("IdUser", (int)ViewBag.IdUser)
+    <input type="submit" value="Add award" />
+</form>  
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <div class="pull-left" style="margin-right: 10px">
+                <img class="" width="75" height="75"
+                     src="@Url.Action("GetImage","Awards", new {id = item.Id})" />
+            </div>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "DeleteUsersAward", new { idUser = (int)ViewBag.IdUser, idAward = item.Id})
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,38 @@
+﻿@model UsersAndAwards.ViewModels.Image.LoadImageVM
+
+@{
+    ViewBag.Title = "Load Photo";
+}
+
+@section scripts
+{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<form action="" method="post" enctype = "multipart/form-data">
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>LoadImageVM</h4>
+        <hr/>
+        @Html.Hidden("IdUser", (int)ViewBag.id)
+        <div class="form-group">
+            <label class='control-label col-md-2' for="Image">Image</label>
+            <div class="col-md-10">
+                <input type="file" name="Image">
+                <span class='control-label col-md-2' id="upload-file-info"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add photo" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    @Html.ActionLink("don't load image", "Index")
+</div>

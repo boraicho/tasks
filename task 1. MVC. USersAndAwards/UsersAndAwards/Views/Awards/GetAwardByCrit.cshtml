@@ -1,0 +1,47 @@
+﻿@model IEnumerable<UsersAndAwards.Entities.AwardDTO>
+
+@{
+    ViewBag.Title = "GetAwardStartWord";
+}
+
+@section navigation
+{
+    <li>@Html.ActionLink("Awards list", "Index")</li>
+    <li>@Html.ActionLink("Awards sort ", "GetAwardByCrit")</li>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <div class="pull-left" style="margin-right: 10px">
+                    <img class="img-small-avatar"
+                         src="@Url.Action("GetImage","Awards", new {id = item.Id})" />
+                </div>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+        </tr>
+    }
+</table>
+
+<div>
+    @Html.ActionLink("Back to list users", "Index")
+</div>

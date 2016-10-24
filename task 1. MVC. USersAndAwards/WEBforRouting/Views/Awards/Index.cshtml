@@ -1,0 +1,47 @@
+﻿@model IEnumerable<UsersAndAwards.Entities.AwardDTO>
+@{
+    ViewBag.Title = "Awards";
+}
+
+@section navigation
+{
+    <li>@Html.ActionLink("Awards list", "Index")</li>
+}
+<h2>Award's list</h2>
+
+<p>
+    @Html.ActionLink("Create new award", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <div class="pull-left" style="margin-right: 10px">
+                <img class="" width="75" height="75"
+                     src="@Url.Action("GetImage","Awards", new {id = item.Id})" />
+            </div>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.ActionLink("Change", "Change", new { item.Id }) | @Html.ActionLink("Delete", "Delete", new { item.Id })
+        </td>
+    </tr>
+}
+</table>

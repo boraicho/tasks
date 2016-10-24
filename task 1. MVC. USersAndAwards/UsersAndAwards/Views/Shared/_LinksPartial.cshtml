@@ -1,0 +1,14 @@
+﻿<div class="container">
+    <ol class="breadcrumb">
+        @{
+            string url = Request.Url.ToString();
+            var path = url.Split(new Char[] { '/' });
+            <li>@Html.ActionLink("Main", "Index")</li>
+            for (int i = 3; i < path.Length; i++)
+            {
+                <li><a href="/@path[i]"></a>@path[i]</li>
+            }
+        }
+    </ol>    
+</div>
+
