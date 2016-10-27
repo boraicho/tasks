@@ -1,0 +1,51 @@
+﻿.glyphicon-big {
+    font-size: 18px;
+}
+
+.small-font-text {
+    font-size: 12px;
+}
+
+.big-font-text {
+    font-size: 15px;
+}
+
+.hr-override-position {
+    margin-top: 25px;
+}
+
+.glyphicon-text {
+    display: block;
+    text-align: center;
+}
+
+.table > tbody > tr > .border-table-override {
+    border-top: none;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    width: 100%;
+}
+
+.vcenter {
+    display: table;
+}
+
+    .vcenter > div {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+.badge-succes {
+    font-size: 9px;
+    padding: 3px 5px;
+    background-color: #60d563;
+    color: #fff;
+}
+
+.badge-position {
+    margin-top: -25px;
+    margin-left: -10px;
+}
