@@ -1,0 +1,14 @@
+﻿.pull-right {
+    float: right;
+    padding-left: 10px;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.text-right {
+    text-align: right;
+}

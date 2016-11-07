@@ -7,14 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="scss/main.css" rel="stylesheet" />
-
     <!--[if IE 9]>
-    <style type="text/css">
-        .btn-left-triangle:after {
-        display: none;
-    }
-    </style>
+    <link href="css/ie9.css" rel="stylesheet" />
     <![endif]-->
+
 
 </head>
 
@@ -25,7 +21,6 @@
     </label>
     <div class="header">
         <img src="./img/logo.png" class="logo" />
-        <!--убрать спаны-->
     </div>
     <nav class="nav-bar upper-text">
         <ul>
@@ -69,13 +64,12 @@
             </a>
             <h2>
                 Test Project last
-                <label for="table-trigger" class="fa-size">
-                    <i class="fa fa-plus-circle"></i>
-                </label>
             </h2>
-
             <input type="checkbox" id="table-trigger" class="table-trigger" />
-
+            <label for="table-trigger" class="fa-size">
+                <i class="fa fa-minus-circle fa-minus-visible"></i>
+                <i class="fa fa-plus-circle fa-plus-visible"></i>
+            </label>
             <table class="additional-information">
                 <tbody>
                     <tr>

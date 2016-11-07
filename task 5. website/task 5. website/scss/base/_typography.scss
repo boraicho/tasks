@@ -18,6 +18,15 @@ h3 {
     font-size: 10px;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
+.upper-text {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 @media screen and (min-width: 750px) {
     span, h5 {
         font-size: 14px;

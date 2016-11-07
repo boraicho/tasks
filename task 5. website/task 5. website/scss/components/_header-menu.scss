@@ -1,22 +1,17 @@
-$black: #000;
-$white: #fff;
-$red: #CB012F;
-$color-a-text: #757575;
-
-
 .nav-bar {
     height: 100%;
     position: fixed;
     top: 45px;
-    bottom: 0;
-    left: 0;
-    background: #333333;
+    z-index: 1;
+    background: $nav-bar-bg-color;
+    margin-left: -170px;
 }
 
 .nav-bar > ul {
     position: relative;
     padding-left: 0px;
     margin: 0;
+    z-index: 0;
 }
 
 .nav-item {
@@ -45,7 +40,7 @@ label[for="nav-trigger"] {
 }
 
 .nav-trigger:checked ~ .nav-bar {
-    z-index: 3;
+    margin-left: 0;
 }
 
 .p-override {
@@ -53,11 +48,10 @@ label[for="nav-trigger"] {
     text-transform: none;
     margin: 0;
 }
-
 @media screen and (min-width: 750px) {
     .nav-bar {
         width: 170px;
-        top: 50px;
+        margin-left: 0;
     }
 
     label[for="nav-trigger"] {

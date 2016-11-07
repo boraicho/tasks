@@ -1,8 +1,4 @@
-﻿$border-color: #e7e7e7;
-$color-gradient-1: #D1D1D1;
-$color-gradient-2: #F1F1F1;
-
-.btn {
+﻿.btn {
     display: block;
     width: 85px;
     height: 35px;
@@ -38,10 +34,6 @@ $color-gradient-2: #F1F1F1;
     z-index: -1;
     background: -webkit-linear-gradient(135deg, $color-gradient-1, $color-gradient-2);
     background: linear-gradient(-45deg, $color-gradient-1, $color-gradient-2);
-}
-
-.ie-style-btn {
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F1F1F1', endColorstr='#D1D1D1',GradientType=0 );
 }
 
 @media screen and (min-width: 970px) {

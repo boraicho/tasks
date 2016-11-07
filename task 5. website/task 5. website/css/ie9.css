@@ -1,0 +1,7 @@
+﻿.ie-style-btn {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F1F1F1', endColorstr='#D1D1D1',GradientType=0 );
+}
+
+.btn-left-triangle::after {
+    display: none;
+}

@@ -1,12 +1,8 @@
-$border-color: #DCDCDC;
-$border-shadow: #D7D7D7;
-$text-color: #E88FA3;
-
 .article {
     margin: 0 15px 10px 15px;
     border: 1px solid $border-color;
     box-shadow: 3px 3px 3px $border-shadow;
-    background-color: #fff;
+    background-color: $white;
 }
 
 .information-block, .date-block {
@@ -33,7 +29,7 @@ $text-color: #E88FA3;
 .link-block > li {
     border-top: 1px solid $border-color;
     padding-left: 15px;
-    background-color: #f2f2f2;
+    background-color: $main-block-bg-color;
 }
 
 .link-block > li > a {
@@ -43,10 +39,6 @@ $text-color: #E88FA3;
 
 .danger-text {
     color: $text-color;
-}
-
-.underline {
-    text-decoration: underline;
 }
 
 @media screen and (min-width: 750px) {
