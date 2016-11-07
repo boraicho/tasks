@@ -1,0 +1,28 @@
+﻿$red: #CB012F;
+
+.fa-red {
+    color: $red;
+}
+
+.fa-size {
+    font-size: 18px;
+}
+
+.fa-exel {
+    background: url(/img/exel.png) no-repeat;
+    width: 13px;
+    height: 12px;
+    padding-left: 15px;
+}
+
+@media screen and (min-width: 750px) {
+    .fa-color {
+        color: $red;
+    }
+}
+
+@media screen and (min-width: 970px) {
+    .fa-size {
+        font-size: 22px;
+    }
+}

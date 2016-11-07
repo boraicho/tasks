@@ -1,0 +1,151 @@
+$border-color: #e7e7e7;
+$label-color-text: #363636;
+$label-bg-color: #f2f2f2;
+$label-bg-color-checked: #B7B7B7;
+$black: #000;
+
+.main-header {
+    position: relative;
+}
+
+.main-nav {
+    border: 1px solid $border-color;
+    border-top: none;
+    color: #363636;
+}
+
+.main-tabs {
+    width: 100%;
+}
+
+.main-tabs > label {
+    border: 1px solid $border-color;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    padding: 10px 0;
+    color: $label-color-text;
+    background-color: $label-bg-color;
+    cursor: pointer;
+}
+
+.main-tabs > input:checked + label {
+    border: none;
+    background-color: $label-bg-color-checked;
+}
+
+.main-nav > ul {
+    display: inline-block;
+    width: 100%;
+    padding: 0 0 0 0;
+}
+
+.li-default-widht {
+    width: 33.3333%;
+    display: inline-block;
+}
+
+.li-default-widht a {
+    margin: 0 auto;
+}
+
+.li-thick {
+    padding: 10px 10px 0;
+    width: 100%;
+}
+
+.main-select {
+    width: 100%;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+label[for="table-trigger"] {
+    cursor: pointer;
+}
+
+.table-trigger:checked ~ .additional-information {
+    display: table;
+}
+
+.additional-information {
+    min-width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    display: none;
+}
+
+.additional-information > tbody > tr > td {
+    border-top: 1px solid $black;
+    padding: 10px 0;
+    width: 50%;
+}
+
+.link-table:checked .text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.upper-text {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 750px) {
+    .nav-bar {
+        width: 170px;
+    }
+
+    label[for="nav-trigger"] {
+        display: none;
+    }
+
+    .up-li {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: auto;
+    }
+
+    .li-left, .li-right {
+        padding: 0 10px;
+    }
+
+    .li-left {
+        float: left;
+    }
+
+    .li-right {
+        float: right;
+    }
+
+    .li-thin {
+        width: 20%;
+    }
+
+    .li-thick {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 970px) {
+    .li-thin {
+        width: 26%;
+    }
+
+    .li-thick {
+        width: 48%;
+    }
+
+    .additional-information > tbody {
+        display: table-cell;
+        vertical-align: top;
+        width: 50%;
+    }
+}

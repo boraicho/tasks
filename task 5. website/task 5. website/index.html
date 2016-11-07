@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mobile</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="scss/main.css" rel="stylesheet" />
+
+    <!--[if IE 9]>
+    <style type="text/css">
+        .btn-left-triangle:after {
+        display: none;
+    }
+    </style>
+    <![endif]-->
+
+</head>
+
+<body>
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+    <label for="nav-trigger">
+        <i class="fa fa-bars fa-2x"></i>
+    </label>
+    <div class="header">
+        <img src="./img/logo.png" class="logo" />
+        <!--убрать спаны-->
+    </div>
+    <nav class="nav-bar upper-text">
+        <ul>
+            <li class="nav-item">
+                <a href="#">Expert search</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">Saved experts</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    Projects <i class="fa fa-flag fa-color"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#"> Consultations</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">Events</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <i class="fa fa-sign-out fa-color"></i> Logout
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    <span class="text-small">Locced in as</span>
+                    <p class="text-small p-override">Girish Gopalan</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="main-block">
+
+        <div class="main-header">
+            <!--relative-->
+            <a href="#" class="default-text-size">
+                <i class="fa fa-chevron-left"></i> Project List
+            </a>
+            <h2>
+                Test Project last
+                <label for="table-trigger" class="fa-size">
+                    <i class="fa fa-plus-circle"></i>
+                </label>
+            </h2>
+
+            <input type="checkbox" id="table-trigger" class="table-trigger" />
+
+            <table class="additional-information">
+                <tbody>
+                    <tr>
+                        <td class="text-left">Create date</td>
+                        <td class="text-right">01/20/15</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Target industries</td>
+                        <td class="text-right">Wireline Telephone Equipment5</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Bios sent</td>
+                        <td class="text-right">10</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Call scheduled</td>
+                        <td class="text-right">2</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td class="text-left">Requested consultations</td>
+                        <td class="text-right">10</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Target companies</td>
+                        <td class="text-right">Frontlier Communications Corporation[FTR]</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Calls completed</td>
+                        <td class="text-right">2</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Calls in scheduling</td>
+                        <td class="text-right">1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="main-tabs upper-text">
+                <input id="tab-1" type="radio" name="tab-group" checked="checked" class="nav-trigger">
+                <label for="tab-1"><span>Experts <i class="fa fa-flag fa-color"></i></span></label><!--
+                --><input id="tab-2" type="radio" name="tab-group" class="nav-trigger"><!--
+                --><label for="tab-2"><span>Consultations <i class="fa fa-phone fa-color"></i></span></label>
+            </div>
+            <nav class="main-nav">
+                <ul class="clearfix">
+                    <li class="li-left li-thin li-default-widht"><a href="#" class="btn btn-default btn-big upper-text ie-style-btn">Expand all</a></li><!--
+                    --><li class="up-li li-default-widht"><a href="#" class="btn btn-default upper-text ie-style-btn"><i class="fa fa-exel"></i>Export</a></li><!--
+                    --><li class="li-right li-thin li-default-widht">
+                        <a href="#" class="btn btn-left-triangle btn-default btn-big ie-style-btn upper-text">
+                            <i class="fa fa-filter" aria-hidden="true"></i>
+                            Filters
+                        </a>
+                    </li>
+                    <li class="li-left li-thick">
+                        <select class="main-select">
+                            <option value="">Sort by Status</option>
+                            <option value="">Sort by Name</option>
+                            <option value="">Sort by Date</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="articles">
+            <div class="article">
+                <div class="information-block">
+                    <span class="upper-text danger-text">Industry expert</span>
+                    <div class="pull-right">
+                        <span class="date-small">07/13/14 </span>
+                        <label class="upper-text lbl lbl-thick lbl-danger">new</label>
+                    </div>
+                    <h3>Mikhail Semichev</h3>
+                    <h5>
+                        EPAM <label class="upper-text lbl lbl-snow">public</label>
+                    </h5>
+                    <span>FE developer (12/01/11 - Present)</span>
+                    <p class="danger-text">
+                        Premium rate: Tihs Expert's hourly consulting rate exceeds our standart rate and would require an additional call debit.
+                    </p>
+                    <p class="danger-text">
+                        Translator Required: This Expert requires a translator, which we can corninate for ome additional call debit.
+                    </p>
+                </div>
+                <div class="date-block danger-text">
+                    <span class="underline">Confirmed Availability</span>
+                    <div>
+                        <span>Tuesday 07/21/15 11:00 AM - 07:13 AM (UTC-05:00)</span>
+                        <span>Eastern Tune (US &amp; Canada)</span>
+                    </div>
+                    <div>
+                        <span>Mounday 07/20/15 07:00 AM - 10:00 AM (UTC-05:00)</span>
+                        <span>Eastern Tune (US &amp; Canada)</span>
+                    </div>
+                </div>
+                <ul class="link-block upper-text">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-phone"></i> Schedule
+                        </a>
+                    </li><!--
+                    --><li>
+                        <a href="#">
+                            <i class="fa fa-exclamation-circle"></i> Request info
+                        </a>
+                    </li><!--
+                    --><li>
+                        <a href="#">
+                            <i class="fa fa-times"></i> Decline
+                        </a>
+                    </li><!--
+                --></ul>
+            </div>
+
+            <div class="article">
+                <div class="information-block">
+                    <span class="upper-text danger-text">Competitor</span>
+                    <div class="pull-right">
+                        <span class="date-small">03/01/14 </span>
+                        <label class="upper-text lbl lbl-thick lbl-danger">new</label>
+                    </div>
+                    <h3>Mikhail Kuznetsov</h3>
+                    <h5>
+                        Yandex <label class="upper-text lbl lbl-snow">public parent</label>
+                    </h5>
+                    <span>FE developer (12/01/11 - 06/05/13)</span>
+                </div>
+                <ul class="link-block upper-text">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-phone"></i> Schedule
+                        </a>
+                    </li><!--
+            --><li>
+                        <a href="#">
+                            <i class="fa fa-exclamation-circle"></i> Request info
+                        </a>
+                    </li><!--
+            --><li>
+                        <a href="#">
+                            <i class="fa fa-times"></i> Decline
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="article">
+                <div class="information-block">
+                    <span class="upper-text danger-text">Customer</span>
+                    <div class="pull-right">
+                        <span class="date-small">03/21/15 </span>
+                        <label class="upper-text lbl lbl-thick lbl-default">viewed</label>
+                    </div>
+                    <h3>Nikita Reshetnikov</h3>
+                    <h5>
+                        Google <label class="upper-text lbl lbl-snow">public</label>
+                    </h5>
+                    <span>FE developer (12/01/11 - 06/05/13)</span>
+                </div>
+                <ul class="link-block upper-text">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-phone"></i> Schedule
+                        </a>
+                    </li><!--
+            --><li>
+                        <a href="#">
+                            <i class="fa fa-exclamation-circle"></i> Request info
+                        </a>
+                    </li><!--
+            --><li>
+                        <a href="#">
+                            <i class="fa fa-times"></i> Decline
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="article">
+                <div class="information-block">
+                    <span class="upper-text danger-text">Customer</span>
+                    <div class="pull-right">
+                        <span class="date-small">03/21/15 </span>
+                        <label class="upper-text lbl lbl-thick lbl-default">viewed</label>
+                    </div>
+                    <h3>Mikhail Kuznetsov</h3>
+                    <h5>
+                        Yandex <label class="upper-text lbl lbl-snow">public</label>
+                    </h5>
+                    <span>FE developer (12/01/11 - 06/05/13)</span>
+                </div>
+                <ul class="link-block upper-text">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-phone"></i> Schedule
+                        </a>
+                    </li><!--
+            --><li>
+                        <a href="#">
+                            <i class="fa fa-exclamation-circle"></i> Request info
+                        </a>
+                    </li><!--
+            --><li>
+                        <a href="#">
+                            <i class="fa fa-times"></i> Decline
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            </div>
+        </div>
+</body>
+
+</html>

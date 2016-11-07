@@ -1,0 +1,33 @@
+﻿a, label, span, h5, p, button {
+    font-size: 12px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.default-text-size {
+    font-size: 14px;
+}
+
+.text-small {
+    font-size: 10px;
+}
+
+.date-small {
+    font-size: 10px;
+}
+
+@media screen and (min-width: 750px) {
+    span, h5 {
+        font-size: 14px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+}

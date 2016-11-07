@@ -1,0 +1,58 @@
+﻿$border-color: #e7e7e7;
+$color-gradient-1: #D1D1D1;
+$color-gradient-2: #F1F1F1;
+
+.btn {
+    display: block;
+    width: 85px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.btn-default {
+    background: -webkit-linear-gradient(bottom, $color-gradient-1, $color-gradient-2);
+    background: linear-gradient(to top, $color-gradient-1, $color-gradient-2);
+    border: 1px solid $border-color;
+    color: #363636;
+}
+
+.btn-left-triangle {
+    position: relative;
+    border-left: none;
+}
+
+.btn-left-triangle:after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 22px;
+    width: 22px;
+    top: 5px;
+    left: -10px;
+    border: 1px solid $border-color;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    z-index: -1;
+    background: -webkit-linear-gradient(135deg, $color-gradient-1, $color-gradient-2);
+    background: linear-gradient(-45deg, $color-gradient-1, $color-gradient-2);
+}
+
+.ie-style-btn {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F1F1F1', endColorstr='#D1D1D1',GradientType=0 );
+}
+
+@media screen and (min-width: 970px) {
+    .btn-big {
+        width: 178px;
+        height: 38px;
+    }
+
+    .btn-left-triangle:after {
+        height: 24px;
+        width: 24px;
+        left: -12px;
+    }
+}

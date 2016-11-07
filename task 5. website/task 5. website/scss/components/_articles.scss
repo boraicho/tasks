@@ -1,0 +1,75 @@
+$border-color: #DCDCDC;
+$border-shadow: #D7D7D7;
+$text-color: #E88FA3;
+
+.article {
+    margin: 0 15px 10px 15px;
+    border: 1px solid $border-color;
+    box-shadow: 3px 3px 3px $border-shadow;
+    background-color: #fff;
+}
+
+.information-block, .date-block {
+    padding: 10px 10px 10px 15px;
+}
+
+.date-block {
+    border-top: 1px solid $border-color;
+}
+
+.date-block > div > span {
+    margin: 5px 0 0 15px;
+}
+
+.article > span, h3, h4, h5, p {
+    margin: 5px 0;
+}
+
+.link-block {
+    margin: 0;
+    padding: 0;
+}
+
+.link-block > li {
+    border-top: 1px solid $border-color;
+    padding-left: 15px;
+    background-color: #f2f2f2;
+}
+
+.link-block > li > a {
+    display: block;
+    padding: 10px 0;
+}
+
+.danger-text {
+    color: $text-color;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 750px) {
+    .link-block {
+        direction: rtl;
+    }
+
+    .link-block > li {
+        direction: ltr;
+        display: inline-block;
+        width: 33.3333%;
+        text-align: center;
+        border-right: 1px solid $border-color;
+    }
+}
+
+@media screen and (min-width: 970px) {
+    .articles {
+        width: 760px;
+        margin: 0 auto;
+    }
+
+    .article {
+        margin: 0 0 10px;
+    }
+}
