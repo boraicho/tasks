@@ -1,0 +1,41 @@
+﻿nav > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.hor-menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.hor-menu li {
+    display: inline-flex;
+}
+
+.hor-menu a {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-under-img {
+    display: none;
+}
+
+@media screen and (min-width: 480px) {
+    .top-navigation {
+        display: flex;
+        align-items: center;
+        order: 1;
+        flex-grow: 1;
+    }
+    
+    .top-navigation > ul {
+        flex-grow: 1;
+    } 
+}
+
+@media screen and (min-width: 768px) {
+    .nav-under-img {
+        display: flex;
+    }
+}
