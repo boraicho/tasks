@@ -1,10 +1,16 @@
 ﻿.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.center-content {
+.center-content, .center-image {
     display: flex;
     justify-content: center;
+}
+
+@media screen and (min-width: 480px) {
+    .center-image {
+        display: block;
+    }
 }

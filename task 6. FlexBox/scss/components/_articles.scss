@@ -8,24 +8,27 @@
     justify-content:space-around;
 }
 
-@media screen and (min-width: 480px) {
+.text-container {
+    padding: 0 10px;
+}
+
+.short-text {
+    margin: 10px 0;
+}
+
+@media (min-width: 480px) {
     .article {
         max-width: 215px;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
     .article {
         max-width: 160px;
     }
 }
 
-@media screen and (min-width: 992px) {
-    .article {
-    }
-}
-
-@media screen and (min-width: 1176px) {
+@media (min-width: 1176px) {
     .article {
         max-width: 205px;
     }

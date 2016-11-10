@@ -11,10 +11,11 @@
    ========================================================================== */
 
 html {
-  font-family: sans-serif; /* 1 */
-  line-height: 1.15; /* 2 */
-  -ms-text-size-adjust: 100%; /* 3 */
-  -webkit-text-size-adjust: 100%; /* 3 */
+    font-family: sans-serif; /* 1 */
+    line-height: 1.15; /* 2 */
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%; /* 3 */
+    -webkit-text-size-adjust: 100%; /* 3 */
 }
 
 /* Sections
@@ -103,8 +104,9 @@ pre {
  */
 
 a {
-  background-color: transparent; /* 1 */
-  -webkit-text-decoration-skip: objects; /* 2 */
+    background-color: transparent; /* 1 */
+    -webkit-text-decoration-skip: objects;
+    text-decoration-skip: objects; /* 2 */
 }
 
 /**

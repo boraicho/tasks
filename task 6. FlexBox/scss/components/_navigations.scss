@@ -6,36 +6,135 @@
 .hor-menu {
     display: flex;
     justify-content: space-around;
+
+    & li {
+        display: inline-flex;
+    }
+
+    & a {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
-.hor-menu li {
-    display: inline-flex;
-}
-
-.hor-menu a {
-    display: flex;
-    flex-direction: column;
+.top-navigation .fa {
+    display: none;
 }
 
 .nav-under-img {
     display: none;
+    margin: 0;
+
+    & ul {
+        flex-grow: 1;
+        margin: 0;
+    }
+
+    & li {
+        border-right: 1px solid $black;
+        width: 100%;
+
+        &:last-child {
+            border: none;
+        }
+    }
+
+    & a {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        padding: 10px 0;
+    }
 }
 
-@media screen and (min-width: 480px) {
+.footer-menu {
+    display: flex;
+
+    & li {
+        border-right: 1px solid $white;
+    }
+
+    & li:last-child {
+        border-right: none;
+    }
+
+    & a {
+        padding: 5px 10px;
+    }
+
+    & li:first-child a {
+        padding-left: 0;
+    }
+
+    & ul {
+        display: flex;
+    }
+}
+
+@media (min-width: 480px) {
     .top-navigation {
         display: flex;
         align-items: center;
         order: 1;
         flex-grow: 1;
+        margin-right: 10px;
+
+        & > ul {
+            flex-grow: 1;
+        }
     }
-    
-    .top-navigation > ul {
-        flex-grow: 1;
-    } 
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
     .nav-under-img {
         display: flex;
+    }
+
+    .top-navigation .fa {
+        display: flex;
+        justify-content: center;
+    }
+
+    .top-navigation {
+        & li, a {
+            width: 100%;
+        }
+
+        & a {
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        & .fa {
+            padding: 10px 0;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+
+    .top-navigation {
+        align-items: flex-start;
+        flex-grow: 0;
+        margin: 0;
+
+        & ul {
+            margin: 0;
+            flex-direction: column;
+        }
+
+        & li {
+        }
+
+        & a {
+            flex-direction: row;
+            padding: 10px 10px 10px 0;
+            align-items: center;
+            width: 100%;
+        }
+
+        & .fa {
+            padding: 0 10px;
+        }
     }
 }

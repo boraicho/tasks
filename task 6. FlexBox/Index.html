@@ -6,25 +6,49 @@
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="scss/main.css" rel="stylesheet" />
 </head>
-<body class="center-content">
-    <div class="container-block">
-        <div class="header">
-            <nav class="top-navigation">
-                <ul class="hor-menu">
-                    <!--fa-display вынести в nav-->
-                    <li><a href="#"><i class="fa fa-tv fa-2x fa-position"></i>Online Series</a></li>
-                    <li><a href="#"><i class="fa fa-calendar fa-2x fa-position"></i>Series Release</a></li>
-                    <li><a href="#"><i class="fa fa-archive fa-2x fa-position"></i>Forum</a></li>
-                    <li><a href="#"><i class="fa fa-rss-square fa-2x fa-position"></i>RSS</a></li>
-                    <li><a href="#"><i class="fa fa-envelope fa-2x fa-position"></i>Contact Us</a></li>
-                </ul>
-            </nav>
-            <!--alt у img-->
-            <div class="center-content">
-                <img src="../img/logo.png" class="logo">
+<body>
+    <div class="header">
+        <nav class="top-navigation">
+            <ul class="hor-menu">
+                <li><a href="#"><i class="fa fa-tv fa-2x"></i>Online Series</a></li>
+                <li><a href="#"><i class="fa fa-calendar fa-2x"></i>Series Release</a></li>
+                <li><a href="#"><i class="fa fa-archive fa-2x"></i>Forum</a></li>
+                <li><a href="#"><i class="fa fa-rss-square fa-2x"></i>RSS</a></li>
+                <li><a href="#"><i class="fa fa-envelope fa-2x fa-position"></i>Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="center-content">
+            <img src="../img/logo.png" alt="" class="logo">
+        </div>
+        <div class="news">
+            <div class="new">
+                <p>
+                    — Сколько у нас денег?<br />
+                    — Три доллара.<br />
+                    — Блин, Картман, ты ж говорил, у нас куча денег!<br />
+                    — Да. Но я не учел тот факт, что слаб в математике.<br />
+                </p>
+            </div>
+            <div class="new">
+                <p>
+                    Если ты обманывал и тебя поймали, то ты обманщик. Если ты обманывал и преуспел, то ты талантлив.
+                </p>
+            </div>
+            <div class="new">
+                <p>
+                    — Хреновый из тебя еврей, Баттерс!<br />
+                    — Может, это потому, что я не еврей?<br />
+                </p>
+            </div>
+            <div class="new">
+                <p>
+                    Еврейская кровь в тебе не позволит выбросить то, за что ты заплатил 15 баксов.
+                </p>
             </div>
         </div>
-        <img src="../img/cartman.jpg" class="img-top">
+    </div>
+    <div class="container-block">
+        <img src="../img/cartman.jpg" alt="" class="img-top">
         <nav class="nav-under-img">
             <ul class="hor-menu">
                 <li><a href="#">Online Series</a></li>
@@ -32,7 +56,7 @@
                 <li><a href="#">Forum</a></li>
             </ul>
         </nav>
-        <form class="mail-form">
+        <form action="" method="post" class="mail-form">
             <div class="clearfix">
                 <img src="../img/mail.png" alt="" class="img-left" />
                 <p class="mail-form-p">
@@ -45,12 +69,12 @@
         </form>
         <main class="articles">
             <div class="article">
-                <div>
-                    <img src="../img/art-img-1.jpg" class="image-article">
+                <div class="center-image">
+                    <img src="../img/art-img-1.jpg" alt="" class="image-article">
                 </div>
                 <div class="text-container">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>
+                    <h4>Lorem ipsum dolor sit amet.</h4>
+                    <p class="short-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nulla neque ante, iaculis dignissim nisl in, lacinia pretium risus.
                         Nam eu justo mauris. Proin id purus neque. Etiam lectus felis, hendrerit.
@@ -59,12 +83,12 @@
                 </div>
             </div>
             <div class="article">
-                <div>
-                    <img src="../img/art-img-2.jpg" class="image-article">
+                <div class="center-image">
+                    <img src="../img/art-img-2.jpg" alt="" class="image-article">
                 </div>
                 <div class="text-container">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>
+                    <h4>Lorem ipsum dolor sit amet.</h4>
+                    <p class="short-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nulla neque ante, iaculis dignissim nisl in, lacinia pretium risus.
                         Nam eu justo mauris. Proin id purus neque. Etiam lectus felis, hendrerit.
@@ -73,12 +97,12 @@
                 </div>
             </div>
             <div class="article">
-                <div>
-                    <img src="../img/art-img-3.jpg" class="image-article">
+                <div class="center-image">
+                    <img src="../img/art-img-3.jpg" alt="" class="image-article">
                 </div>
                 <div class="text-container">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>
+                    <h4>Lorem ipsum dolor sit amet.</h4>
+                    <p class="short-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nulla neque ante, iaculis dignissim nisl in, lacinia pretium risus.
                         Nam eu justo mauris. Proin id purus neque. Etiam lectus felis, hendrerit.
@@ -87,12 +111,12 @@
                 </div>
             </div>
             <div class="article">
-                <div class="center-content">
-                    <img src="../img/art-img-4.jpg" class="image-article">
+                <div class="center-image">
+                    <img src="../img/art-img-4.jpg" alt="" class="image-article">
                 </div>
                 <div class="text-container">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>
+                    <h4>Lorem ipsum dolor sit amet.</h4>
+                    <p class="short-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nulla neque ante, iaculis dignissim nisl in, lacinia pretium risus.
                         Nam eu justo mauris. Proin id purus neque. Etiam lectus felis, hendrerit.
@@ -104,16 +128,13 @@
         <footer>
             <div>
                 <nav class="footer-menu">
-                    <ul class="hor-menu">
+                    <ul>
                         <li><a href="#">Privacy Policyent</a></li>
                         <li><a href="#">Terms of Use</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
-                <p></p>
-            </div>
-            <div>
-
+                <p class="text-small">&copy; 2016 boraicho, all rights are not reserved.</p>
             </div>
         </footer>
     </div>
