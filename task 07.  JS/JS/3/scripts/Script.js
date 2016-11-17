@@ -82,7 +82,6 @@
             case 'M':
                 return date.getMonth();
             case 'MM':
-
                 if (date.getMonth() < 10) {
                     return "0" + date.getMonth();
                 }
@@ -119,7 +118,6 @@
                     return date.getHours();
                 }
             case 'hh':
-
                 if (date.getHours() < 10) {
                     return "0" + date.getHours();
                 }
