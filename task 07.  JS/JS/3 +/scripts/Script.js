@@ -56,7 +56,7 @@
 
 
     Date.prototype.format = function (formatArray) {
-        var thiss = this;
+        var self = this;
         for (i = 0; i < formatArray.length; i += 1) {
             formatElement = formatArray[i].toString();
             replaceFormatToDate();
@@ -71,75 +71,75 @@
             var months = getClientLanguage();
             switch (formatElement) {
                 case 'yy':
-                    var shortYear = thiss.getFullYear().toString();
+                    var shortYear = self.getFullYear().toString();
                     return shortYear.substr(2);
                 case 'yyyy':
-                    return thiss.getFullYear();
+                    return self.getFullYear();
                 case 'M':
-                    return thiss.getMonth();
+                    return self.getMonth();
                 case 'MM':
-                    if (thiss.getMonth() < 10) {
+                    if (self.getMonth() < 10) {
                         return "0" + date.getMonth();
                     }
                     else {
-                        return thiss.getMonth();
+                        return self.getMonth();
                     }
                 case 'MMM':
-                    return months[thiss.getMonth()].substr(0, 3);
+                    return months[self.getMonth()].substr(0, 3);
                 case 'MMMM':
-                    return months[thiss.getMonth()];
+                    return months[self.getMonth()];
                 case 'd':
-                    return thiss.getDate();
+                    return self.getDate();
                 case 'dd':
-                    if (thiss.getDate() < 10) {
-                        return "0" + thiss.getDate();
+                    if (self.getDate() < 10) {
+                        return "0" + self.getDate();
                     }
                     else {
-                        return thiss.getDate();
+                        return self.getDate();
                     }
                 case 'H':
-                    return thiss.getHours();
+                    return self.getHours();
                 case 'HH':
-                    if (thiss.getHours() < 10) {
-                        return "0" + thiss.getHours();
+                    if (self.getHours() < 10) {
+                        return "0" + self.getHours();
                     }
                     else {
-                        return thiss.getHours();
+                        return self.getHours();
                     }
                 case 'h':
-                    if (thiss.getHours() > 12) {
-                        return thiss.getHours() - 12;
+                    if (self.getHours() > 12) {
+                        return self.getHours() - 12;
                     }
                     else {
-                        return thiss.getHours();
+                        return self.getHours();
                     }
                 case 'hh':
-                    if (thiss.getHours() < 10) {
-                        return "0" + thiss.getHours();
+                    if (self.getHours() < 10) {
+                        return "0" + self.getHours();
                     }
-                    if (thiss.getHours() > 12) {
-                        return thiss.getHours() - 12;
+                    if (self.getHours() > 12) {
+                        return self.getHours() - 12;
                     }
                     else {
-                        return thiss.getHours();
+                        return self.getHours();
                     }
                 case 'm':
-                    return thiss.getMinutes();
+                    return self.getMinutes();
                 case 'mm':
-                    if (thiss.getMinutes() < 10) {
-                        return "0" + thiss.getMinutes();
+                    if (self.getMinutes() < 10) {
+                        return "0" + self.getMinutes();
                     }
                     else {
-                        return thiss.getMinutes();
+                        return self.getMinutes();
                     }
                 case 's':
-                    return thiss.getSeconds();
+                    return self.getSeconds();
                 case 'ss':
-                    if (thiss.getSeconds() < 10) {
-                        return "0" + thiss.getSeconds();
+                    if (self.getSeconds() < 10) {
+                        return "0" + self.getSeconds();
                     }
                     else {
-                        return thiss.getSeconds();
+                        return self.getSeconds();
                     }
             }
 
