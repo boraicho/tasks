@@ -1,0 +1,88 @@
+.background {
+    background: url(../assets/tiles/png/bg/bg.png) repeat-x;
+    table-layout: fixed;
+    border-spacing: 0;
+}
+
+.background td {
+    padding: 0;
+}
+
+.lava {
+    background: rgb(255, 100, 100);
+}
+
+.wall {
+    background: white;
+}
+
+.actor {
+    position: absolute;
+}
+
+.coin {
+    background: rgb(241, 229, 89);
+}
+
+.player {
+    background: rgb(64, 64, 64);
+}
+
+.lost .player {
+    background: rgb(160, 64, 64);
+}
+
+.won .player {
+    box-shadow: -4px -7px 8px white, 4px -7px 8px white;
+}
+
+.game {
+    overflow: hidden;
+    max-width: 1000x;
+    max-height: 1000px;
+    position: relative;
+}
+
+.water {
+    background: url(../assets/tiles/png/tiles/water.png) no-repeat;
+}
+
+.waterFull {
+    background: url(../assets/tiles/png/tiles/waterFull.png) no-repeat;
+}
+
+.landTopCenter {
+    background: url(../assets/tiles/png/tiles/landTopCenter.png) no-repeat;
+}
+
+.landTopLeft {
+    background: url(../assets/tiles/png/tiles/landTopLeft.png) no-repeat;
+}
+
+.landTopRight {
+    background: url(../assets/tiles/png/tiles/landTopRight.png) no-repeat;
+}
+
+.landCenter {
+    background: url(../assets/tiles/png/tiles/landCenter.png) no-repeat;
+}
+
+.landLeft {
+    background: url(../assets/tiles/png/tiles/landLeft.png) no-repeat;
+}
+
+.landRight {
+    background: url(../assets/tiles/png/tiles/landRight.png) no-repeat;
+}
+
+.landBot {
+    background: url(../assets/tiles/png/tiles/landBot.png) no-repeat;
+}
+
+.landBotLeft {
+    background: url(../assets/tiles/png/tiles/landBotLeft.png) no-repeat;
+}
+
+.landBotRight {
+    background: url(../assets/tiles/png/tiles/landBotRight.png) no-repeat;
+}

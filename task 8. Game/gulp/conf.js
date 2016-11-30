@@ -13,12 +13,11 @@ var gutil = require('gulp-util');
  */
 exports.paths = {
 	src: 'src',
-	root:'/',
+	root: '/',
 	temp: {
 		root: '.tmp',
 		js: '.tmp/js',
 		css:'.tmp/css'
-
 	}
 };
 

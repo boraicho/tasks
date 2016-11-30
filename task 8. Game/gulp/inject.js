@@ -1,5 +1,4 @@
-﻿(function ()
-{
+﻿(function () {
 	'use strict';
 
 	var path = require('path'),
@@ -7,14 +6,13 @@
 		$ = require('gulp-load-plugins')(),
 		conf = require('./conf');
 
-	gulp.task('inject', ['copy-css', 'copy-js'], function ()
-	{
+	gulp.task('inject', ['copy-css', 'copy-js'], function () {
 		var injectScripts = gulp.src([
-				conf.paths.temp.root + '/js/app.js',
-				conf.paths.temp.root + '/**/*.js',
-			]),
+			conf.paths.temp.root + '/**/*.js',
+			conf.paths.temp.root + '/**/functions.js'
+		]),
 			injectStyles = gulp.src([
-				conf.paths.temp.root + '/**/*.css',
+				conf.paths.temp.root + '/**/*.css'
 			]);
 
 		return gulp.src(conf.paths.src + '/*.html')
@@ -23,17 +21,15 @@
 			.pipe(gulp.dest(conf.paths.temp.root));
 	});
 
-	gulp.task('copy-css', ['styles'], function ()
-	{
+	gulp.task('copy-css', ['styles'], function () {
 		return gulp.src(conf.paths.src + '/css/**/*.css')
 			.pipe(gulp.dest(conf.paths.temp.root));
 	});
 
 
-	gulp.task('copy-js', ['scripts'], function ()
-	{
+	gulp.task('copy-js', ['scripts'], function () {
 		return gulp.src(conf.paths.src + '/js/**/*.js')
 			.pipe(gulp.dest(conf.paths.temp.root));
 	});
 
-}());
+} ());

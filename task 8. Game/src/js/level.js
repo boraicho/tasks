@@ -3,18 +3,23 @@ function Level(plan) {
     this.getGameObjects(plan);
 }
 
-Level.prototype.getGameObjects = function (plan) {
+Level.prototype.getGameObjects = function(plan) {
     var actorChars = {
         '@': Player,
-        'o': Coin,
-        '=': Lava,
-        '|': Lava,
-        'v': Lava
+        '.': Food,
+        't': Teleport,
+        'b': Ghost,
+        'p': Ghost,
+        'i': Ghost,
+        'c': Ghost
     };
     this.width = plan[0].length;
     this.height = plan.length;
     this.grid = [];
     this.actors = [];
+    this.actorsArray;
+    this.life = 3;
+    this.score = 0;
 
     for (var y = 0; y < this.height; y += 1) {
         var line = plan[y],
@@ -26,87 +31,37 @@ Level.prototype.getGameObjects = function (plan) {
             if (Actor) {
                 this.actors.push(new Actor(new Vector(x, y), ch));
             }
-            // else {
-            //     switch (ch) {
-            //         case '~':
-            //             fieldType = 'water';
-            //             break;
-            //         case 'w':
-            //             fieldType = 'waterFull';
-            //             break;
-            //         case '-':
-            //             fieldType = 'landTopCenter';
-            //             break;
-            //         case '\\':
-            //             fieldType = 'landTopLeft';
-            //             break;
-            //         case '/':
-            //             fieldType = 'landTopRight';
-            //             break;
-            //         case '|':
-            //             fieldType = 'landCenter';
-            //             break;
-            //         case '(':
-            //             fieldType = 'landLeft';
-            //             break;
-            //         case ')':
-            //             fieldType = 'landRight';
-            //             break;
-            //         case '_':
-            //             fieldType = 'landBot';
-            //             break;
-            //         case '[':
-            //             fieldType = 'landBotLeft';
-            //             break;
-            //         case ']':
-            //             fieldType = 'landBotRight';
-            //             break;
-            //     }
-            // }
-            else if (ch === 'x') {
-                fieldType = 'wall';
+            else if (ch === " ") {
+                fieldType = null;
             }
-            else if (ch === '!') {
-                fieldType = 'lava';
-            }
-            else if (ch === '~') {
-                fieldType = 'water';
-            }
-            else if (ch === 'w') {
-                fieldType = 'fWater';
-            }
-            else if (ch === '') {
-                fieldType = 'water';
+            else {
+                fieldType = ch;
             }
             gridLine.push(fieldType);
         }
         this.grid.push(gridLine);
     }
+    this.actorsArray = this.actors;
 
-    this.player = this.actors.filter(function (actor) {
+    this.player = this.actors.filter(function(actor) {
         return actor.type == 'player';
     })[0];
     this.status = this.finishDelay = null;
 }
 
-Level.prototype.isFinished = function () {
+Level.prototype.isFinished = function() {
     return this.status != null && this.finishDelay < 0;
 };
 
-Level.prototype.obstacleAt = function (pos, size) {
+Level.prototype.obstacleAt = function(pos, size) {
     var xStart = Math.floor(pos.x),
         xEnd = Math.ceil(pos.x + size.x),
         yStart = Math.floor(pos.y),
-        yEnd = Math.ceil(pos.y + size.y);
-    if (xStart < 0 || xEnd > this.width || yStart < 0) {
-        return 'wall';
-    }
-    if (yEnd > this.height) {
-        return 'lava';
-    }
+        yEnd = Math.ceil(pos.y + size.y),
+        fieldType;
     for (var y = yStart; y < yEnd; y += 1) {
         for (var x = xStart; x < xEnd; x += 1) {
-            var fieldType = this.grid[y][x];
+            fieldType = this.grid[y][x];
             if (fieldType) {
                 return fieldType
             }
@@ -114,9 +69,10 @@ Level.prototype.obstacleAt = function (pos, size) {
     }
 };
 
-Level.prototype.actorAt = function (actor) {
+Level.prototype.actorAt = function(actor) {
+    var other;
     for (var i = 0; i < this.actors.length; i += 1) {
-        var other = this.actors[i];
+        other = this.actors[i];
         if (other != actor &&
             actor.pos.x + actor.size.x > other.pos.x &&
             actor.pos.x < other.pos.x + other.size.x &&
@@ -127,46 +83,79 @@ Level.prototype.actorAt = function (actor) {
     }
 };
 
-Level.prototype.animate = function (step, keys) {
+Level.prototype.animate = function(step, keys) {
     if (this.status != null) {
         this.finishDelay -= step;
     }
     while (step > 0) {
         var thisStep = Math.min(step, maxStep);
-        this.actors.forEach(function (actor) {
-            actor.act(thisStep, this, keys);
+        this.actors.forEach(function(actor) {
+            if (actor.type != 'food' && actor.type != 'teleport') {
+                actor.act(thisStep, this, keys, this.player);
+            }
         }, this);
         step -= thisStep;
     }
 };
 
-Level.prototype.act = function (step, level) {
+Level.prototype.act = function(step, level) {
     var newPos = this.pos.plus(this.speed.times(step));
     if (!level.obstacleAt(newPos, this.size)) {
         this.pos = newPos;
-    }
-    else if (this.repeatPos) {
-        this.pos = this.repeatPos;
     }
     else {
         this.speed = this.speed.times(-1);
     }
 };
 
-Level.prototype.playerTouched = function (type, actor) {
-    if (type === 'lava' && this.status === null) {
-        this.status = 'lost';
+Level.prototype.playerTouched = function(type, actor, player) {
+    if (type === 'ghost' && this.status === null) {
+        player.pos = new Vector(13.6, 23);
+        actor.pos = new Vector(13, 11);
+        this.life -= 1;
+        if (this.life === 0) {
+            this.status = 'lost';
+        }
         this.finishDelay = 1;
     }
-    else if (type === 'coin') {
-        this.actors = this.actors.filter(function (other) {
+    else if (type === 'teleport') {
+        if (player.pos.x < 1) {
+            var newPos = player.pos.plus(new Vector(27, 0));
+            player.pos = newPos;
+        }
+        else if (player.pos.x > 27) {
+            var newPos = player.pos.plus(new Vector(-27, 0));
+            player.pos = newPos;
+        }
+    }
+    else if (type === 'food') {
+        this.actors = this.actors.filter(function(other) {
             return other != actor;
         });
-        if (!this.actors.some(function (actor) {
-            return actor.type === 'coin';
+        this.score += 1;
+        if (!this.actors.some(function(actor) {
+            return actor.type === 'food';
         })) {
-            this.status = 'won';
+            this.nextLevel();
             this.finishDelay = 1;
         }
     }
+};
+
+Level.prototype.nextLevel = function() {
+    var player = this.actors.filter(function(actor) {
+        return actor.type === 'player';
+    }),
+        ghost = this.actors.filter(function(actor) {
+            return actor.type === 'ghost';
+        });
+    this.actorsArray.forEach(function(actor) {
+        if (actor.type === 'player') {
+            actor.pos = player[0].pos;
+        }
+        else if (actor.type === 'ghost') {
+            actor.pos = ghost[0].pos;
+        }
+    }, this);
+    this.actors = this.actorsArray;
 };

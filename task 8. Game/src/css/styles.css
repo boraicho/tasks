@@ -1,0 +1,17 @@
+body {
+  background-color: #111111; }
+
+.alert {
+  color: #fff;
+  font-size: 30px;
+  position: absolute;
+  left: 45%;
+  top: 45%; }
+
+#game {
+  margin: 0 auto;
+  width: 450px;
+  height: 530px; }
+
+.alertNone {
+  display: none; }
