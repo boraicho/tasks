@@ -1,0 +1,54 @@
+.show-pop-up {
+    display: none;
+}
+
+#pop-up {
+    position: absolute;
+    z-index: 2;
+    width: 600px;
+    left: 35%;
+    display: none;
+}
+
+#block-screen {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    z-index: 1;
+    opacity: 0.5;
+    display: none;
+}
+
+#name-error, #email-error, #count-error, #price-error {
+    position: absolute;
+    margin-right: 5px;
+}
+
+#name-error {
+    top: 30px;
+}
+
+#email-error {
+    top: 105px;
+}
+
+#count-error {
+    top: 178px;
+}
+
+#price-error {
+    top: 253px;
+}
+
+.glyphicon-triangle-top, .glyphicon-triangle-bottom {
+    cursor: pointer;
+}
+
+.glyphicon-triangle-top:hover, .glyphicon-triangle-bottom:hover {
+    color: #888;
+}
+
+.danger-alert{
+    border: 1px solid #ff0000;
+}
