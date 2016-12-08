@@ -41,7 +41,7 @@
         <% if(attribute === 'getAll'){ %>
             <% storage.forEach(function(goods){ %>
             <tr>
-                <td><a href="" data-id = <%-goods.id %>><%-goods.name %></a><span class="badge pull-right"><%- goods.count %></span></td>
+                <td><a href="" class="edit" data-id = <%-goods.id %>><%-goods.name %></a><span class="badge pull-right"><%- goods.count %></span></td>
                 <td class="text-center"><%-goods.price %></td>
                 <td class="text-center">
                     <button class="edit" data-id = <%-goods.id %>>Edit</button>
@@ -54,39 +54,49 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <form action="" methood="post" id="add-form">
+                    <input type="hidden" id="id" value = <%- id %>>
                     <div class="row">
                         <div class="col-xs-6">
-                            <input type="hidden" id="id" value = <%- id %>>
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" name="name" placeholder="name" id ="name" class="form-control" value= <%- name%>>
                             </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div id="name-error"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
                             <div class="form-group">
                                 <label for="email">Supplier email</label>
                                 <input type="email" name="email" placeholder="email" id ="email" class="form-control" value= <%- supplier%>>
                             </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div id="email-error"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
                             <div class="form-group">
                                 <label for="count">Count</label>
-                                <input type="text" name="count" placeholder="count" id ="count" class="form-control" value= <%- count%>> 
-                            </div>
-                            <div class="form-group">
-                                <label for="price">Price</label>
-                                <input type="text" name="price" placeholder="price" id ="price" class="form-control" value= <%- price%>> 
+                                <input type="text" name="count" placeholder="count" id ="count" class="form-control only-number" value= <%- count%>> 
                             </div>
                         </div>
                         <div class="col-xs-6">
+                            <div id="count-error"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
                             <div class="form-group">
-                                <div id="name-error"></div>
+                                <label for="price">Price</label>
+                                <input type="text" name="price" placeholder="price" id ="price" class="form-control only-number" value= <%- price%>> 
                             </div>
-                            <div class="form-group">
-                                <div id="email-error"></div>
-                            </div>
-                            <div class="form-group">
-                                <div id="count-error"></div>
-                            </div>
-                             <div class="form-group">
-                                <div id="price-error"></div>
-                            </div>
+                        </div>
+                        <div class="col-xs-6">
+                            <div id="price-error"></div>
                         </div>
                     </div>
                     <div class="row">
@@ -133,11 +143,11 @@
     <script type="text/template" id="selection">
     <% if(attribute === 'countries'){ %>
        <% storage.forEach(function(delivery){ %>
-        <p><input type="radio" name="radiobutton" value= <%- delivery.country %>></input> <%- delivery.country %> </p>
+        <p><input type="radio" name="radiobutton" value= <%- delivery.country %> class="radio-button"></input> <%- delivery.country %> </p>
         <% }); %>
     <% } %>
     <% if(attribute === 'cities'){ %>
-        <p><input type="checkbox" name="all" value="checkbox">Select all</p>
+        <p><input type="checkbox" name="all" value="checkbox" class="all-checkbox">Select all</p>
         <% cities.forEach(function(city){ %>
         <p><input type="checkbox" name=<%- city %> value="checkbox"><%- city %></p>
         <% }); %>

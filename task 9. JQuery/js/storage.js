@@ -1,12 +1,12 @@
-'use strict';
 function Storage() {
-    this.storage = [];
+    'use strict';
+    this.store = [];
     this.delivery = [];
 }
 
-Storage.prototype.addGoods = function(name, price, count, delivery, supplier) {
+Storage.prototype.addGoods = function (name, price, count, delivery, supplier) {
     var id,
-        product = _.maxBy(this.storage, function(product) {
+        product = _.maxBy(this.store, function (product) {
             id = product.id;
         });
     if (_.isUndefined(id)) {
@@ -14,23 +14,23 @@ Storage.prototype.addGoods = function(name, price, count, delivery, supplier) {
     } else {
         id += 1;
     }
-    this.storage.push(new Goods(id, name, price, count, delivery, supplier));
+    this.store.push(new Goods(id, name, price, count, delivery, supplier));
 };
 
-Storage.prototype.removeGoods = function(id) {
-    this.storage = _.filter(this.storage, function(product) {
+Storage.prototype.removeGoods = function (id) {
+    this.store = _.filter(this.store, function (product) {
         return product.id !== id;
     });
 };
 
-Storage.prototype.edit = function(id, name, price, count, delivery, supplier) {
-    var product = _.remove(this.storage, function(item) {
+Storage.prototype.edit = function (id, name, price, count, delivery, supplier) {
+    var product = _.remove(this.store, function (item) {
         return item.id === Number(id);
     });
     product[0].edit(id, name, price, count, delivery, supplier);
-    this.storage.push(product[0]);
+    this.store.push(product[0]);
 };
 
-Storage.prototype.addDelivery = function(country, sities) {
+Storage.prototype.addDelivery = function (country, sities) {
     this.delivery.push(new Delivery(country, sities));
 }

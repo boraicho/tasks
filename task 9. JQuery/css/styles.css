@@ -20,25 +20,12 @@
     display: none;
 }
 
+.pop-up-show #block-screen, .pop-up-show #pop-up {
+    display: block;
+}
+
 #name-error, #email-error, #count-error, #price-error {
-    position: absolute;
-    margin-right: 5px;
-}
-
-#name-error {
-    top: 30px;
-}
-
-#email-error {
-    top: 105px;
-}
-
-#count-error {
-    top: 178px;
-}
-
-#price-error {
-    top: 253px;
+    margin-top: 30px;
 }
 
 .glyphicon-triangle-top, .glyphicon-triangle-bottom {
@@ -49,6 +36,6 @@
     color: #888;
 }
 
-.danger-alert{
+.danger-alert {
     border: 1px solid #ff0000;
 }

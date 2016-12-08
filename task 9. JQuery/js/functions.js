@@ -16,54 +16,53 @@
     addFake();
     getAllGoods();
 
-    $popUp.on('submit', '#add-form', function (e) {
-        $("#add-form").find("input,select").not('[type="submit"]').each(function () {
-            validation(this);
-        });
-        if (errors.length === 0) {
-            var $id = $('#id').val(),
-                $name = $('#name').val(),
-                $price = moneyToNumber($('#price').val()),
-                $count = $('#count').val(),
-                $supplier = $('#email').val(),
-                citiesChecked = [],
-                delivery;
-            $('input:checkbox:checked').each(function () {
-                if (this.name !== 'All') {
-                    citiesChecked.push(this.name);
-                }
+    $popUp
+        .on('submit', '#add-form', function (e) {
+            $("#add-form").find("input,select").not('[type="submit"]').each(function () {
+                validation(this);
             });
-            modalHide();
-            delivery = new Delivery(country, citiesChecked);
-            if ($id !== '') {
-                storage.edit($id, $name, $price, $count, delivery, $supplier);
+            if (errors.length === 0) {
+                var $id = $('#id').val(),
+                    $name = $('#name').val(),
+                    $price = moneyToNumber($('#price').val()),
+                    $count = $('#count').val(),
+                    $supplier = $('#email').val(),
+                    citiesChecked = [],
+                    delivery;
+                $('input:checkbox:checked').each(function () {
+                    if (this.name !== 'All') {
+                        citiesChecked.push(this.name);
+                    }
+                });
+                modalHide();
+                delivery = new Delivery(country, citiesChecked);
+                if ($id !== '') {
+                    storage.edit($id, $name, $price, $count, delivery, $supplier);
+                }
+                else {
+                    storage.addGoods($name, $price, $count, delivery, $supplier);
+                }
+                getAllGoods();
             }
             else {
-                storage.addGoods($name, $price, $count, delivery, $supplier);
+                $(".danger-alert").first().focus();
             }
-            getAllGoods();
-        }
-        else {
-            $(".danger-alert").first().focus();
-        }
-        e.preventDefault();
-    });
+            e.preventDefault();
+        })
 
-    $popUp.on('click', function (e) {
-        if (e.target.id === 'delete') {
+        .on('click', '#delete', function () {
             modalHide();
             storage.removeGoods(idDelete);
             getAllGoods();
-        }
-        else if(e.target.id === 'dont-delete') {
-            modalHide();
-        }
-    });
+        })
 
-    $popUp.on('change', function (e) {
-        var select = $("select option:selected").val(),
-            data;
-        if (e.target.id === 'list') {
+        .on('click', '#dont-delete', function () {
+            modalHide();
+        })
+
+        .on('change', '#list', function () {
+            var select = $("select option:selected").val(),
+                data;
             switch (select) {
                 case 'countries':
                     data = $selection({
@@ -75,10 +74,11 @@
                 case 'cities':
                     break;
             }
-        }
-        else if (e.target.name === 'radiobutton') {
+        })
+
+        .on('change', '.radio-button', function () {
             var cities;
-            country = e.target.value;
+            country = $(this).val();
             storage.delivery.forEach(function (delivery) {
                 if (delivery.country === country) {
                     cities = delivery.cities;
@@ -89,19 +89,29 @@
                 cities: cities
             });
             $('#select').html(data);
-        }
-        else if (e.target.type === 'checkbox') {
-            if (e.target.name === 'All') {
-                $('input:checkbox').each(function () {
-                    this.checked = true;
-                });
-            }
-        }
-    });
+        })
 
-    $popUp.on('focus', '#price', function () {
-        $('#price').val('');
-    });
+        .on('change', '.all-checkbox', function () {
+            $('input:checkbox').each(function () {
+                this.checked = true;
+            });
+        })
+
+        .on('focus', '#price', function () {
+            $('#price').val('');
+        })
+
+        .on('input', '.only-number', function (e) {
+            var val = $(this).val(),
+                pattern = /[\D]/g;
+            if (val.match(pattern)) {
+                e.target.value = val.replace(pattern, '');
+            }
+        })
+
+        .on('blur', '#add-form', function (e) {
+            validation(e.target);
+        });
 
     $add.on('click', function () {
         var data = $html({
@@ -117,21 +127,22 @@
         $popUp.html(data);
     });
 
-    $table.on('click', function (event) {
-        var e = event.target;
-        idDelete = Number($(e).attr('data-id'));
-        if (e.className === 'delete') {
-            data = $html({
-                attribute: 'delete'
-            });
-            modalShow();
-            $popUp.html(data);
-        }
-        else if (e.className === 'edit' || e.tagName === 'A') {
-            if(e.tagName === 'A'){
-                event.preventDefault();
+    $table.on('click', '.delete', function (e) {
+        var data;
+        idDelete = Number($(e.target).attr('data-id'));
+        data = $html({
+            attribute: 'delete'
+        });
+        modalShow();
+        $popUp.html(data);
+    })
+
+        .on('click', '.edit', function (e) {
+            idDelete = Number($(e.target).attr('data-id'));
+            if (e.target.tagName === 'A') {
+                e.preventDefault();
             }
-            var product = _.filter(storage.storage, function (product) {
+            var product = _.filter(storage.store, function (product) {
                 return product.id === idDelete;
             }),
                 data;
@@ -146,70 +157,68 @@
             });
             modalShow();
             $popUp.html(data);
-        }
-        else if (e.id === 'sort-name') {
-            storage.storage = _.sortBy(storage.storage, ['goods', 'name']);
-            if (e.className === 'glyphicon glyphicon-triangle-top') {
-                storage.storage.reverse();
+        })
+
+        .on('click', '#sort-name', function (e) {
+            var $class = e.target.className;
+            storage.store = _.sortBy(storage.store, ['goods', 'name']);
+            if ($class === 'glyphicon glyphicon-triangle-top') {
+                storage.store.reverse();
             }
             $('#sort-name').toggleClass('glyphicon-triangle-top');
             $('#sort-name').toggleClass('glyphicon-triangle-bottom');
             getAllGoods();
-        }
-        else if (e.id === 'sort-price') {
-            storage.storage = _.sortBy(storage.storage, function (item) {
+        })
+
+        .on('click', '#sort-price', function (e) {
+            var $class = e.target.className;
+            storage.store = _.sortBy(storage.store, function (item) {
                 return item.price;
             });
-            if (e.className === 'glyphicon glyphicon-triangle-top') {
-                storage.storage.reverse();
+            if ($class === 'glyphicon glyphicon-triangle-top') {
+                storage.store.reverse();
             }
             $('#sort-price').toggleClass('glyphicon-triangle-top');
             $('#sort-price').toggleClass('glyphicon-triangle-bottom');
             getAllGoods();
-        }
-    });
+        });
 
     $blockScreen.on('click', function () {
         modalHide();
     });
 
-    $popUp.on('input', '#count', '#price', function (e) {
-        var val = e.target.value,
-            pattern = /^[\D]/g;
-        if (val.match(pattern)) {
-            e.target.value = val.replace(pattern, '');
-        }
-    });
 
-    $popUp.on('blur', '#add-form', function (e) {
-        validation(e.target);
-    });
-
-    $('#filter').on('input', '#filter-text', function (e) {
-        var val = e.target.value;
+    $('#filter').on('input', '#filter-text', function () {
+        var val = $(this).val();
         getAllGoods(val);
-    })
+    });
 
     function validation(target) {
+        var $target = $(target),
+            $dangerAlertClass = 'danger-alert',
+            $nameError = $('#name-error'),
+            $emailError = $('#email-error'),
+            $countError = $('#count-error'),
+            $priceError = $('#price-error');
         switch (target.id) {
             case 'name':
-                if (target.value.length > 15 || target.value.length === 0) {
-                    $('#name-error').html('Name must be between 1 and 15 characters');
-                    $(target).addClass('danger-alert');
+                if (target.value.length > 15) {
+                    $nameError.html('Name must be between 1 and 15 characters');
+                    $target.addClass($dangerAlertClass);
                     if (errors.indexOf('name') < 0) {
                         errors.push('name');
                     }
                 }
-                else if (validationString(target.value)) {
-                    $('#name-error').html('Name field must not be empty');
-                    $(target).addClass('danger-alert');
+                else if (target.value.trim() === '') {
+                    $nameError.html('Name field must not be empty');
+                    $target.addClass($dangerAlertClass);
                     if (errors.indexOf('name') < 0) {
                         errors.push('name');
                     }
                 }
                 else {
-                    $('#name-error').html('');
-                    $(target).removeClass('danger-alert');
+                    $nameError.html('');
+                    $target.removeClass($dangerAlertClass);
                     errors = _.filter(errors, function (item) {
                         return item !== 'name';
                     });
@@ -217,22 +226,22 @@
                 break;
             case 'email':
                 if (target.value.length === 0) {
-                    $('#email-error').html('Email field must not be empty');
-                    $(target).addClass('danger-alert');
+                    $emailError.html('Email field must not be empty');
+                    $target.addClass($dangerAlertClass);
                     if (errors.indexOf('email') < 0) {
                         errors.push('email');
                     }
                 }
                 else if (!validationEmail(target.value)) {
-                    $('#email-error').html('Email is incorrect');
-                    $(target).addClass('danger-alert');
+                    $emailError.html('Email is incorrect');
+                    $target.addClass($dangerAlertClass);
                     if (errors.indexOf('email') < 0) {
                         errors.push('email');
                     }
                 }
                 else {
-                    $('#email-error').html('');
-                    $(target).removeClass('danger-alert');
+                    $emailError.html('');
+                    $target.removeClass($dangerAlertClass);
                     errors = _.filter(errors, function (item) {
                         return item !== 'email';
                     });
@@ -240,15 +249,15 @@
                 break;
             case 'count':
                 if (target.value.length === 0) {
-                    $('#count-error').html('Count field must not be empty');
-                    $(target).addClass('danger-alert');
+                    $countError.html('Count field must not be empty');
+                    $target.addClass($dangerAlertClass);
                     if (errors.indexOf('count') < 0) {
                         errors.push('count');
                     }
                 }
                 else {
-                    $('#count-error').html('');
-                    $(target).removeClass('danger-alert');
+                    $countError.html('');
+                    $target.removeClass($dangerAlertClass);
                     errors = _.filter(errors, function (item) {
                         return item !== 'count';
                     });
@@ -256,14 +265,14 @@
                 break;
             case 'price':
                 if (target.value.length === 0) {
-                    $('#price-error').html('Price field must not be empty');
-                    $(target).addClass('danger-alert');
+                    $priceError.html('Price field must not be empty');
+                    $target.addClass($dangerAlertClass);
                     if (errors.indexOf('price') < 0) {
                         errors.push('price');
                     }
                 }
                 else {
-                    $(target).removeClass('danger-alert');
+                    $target.removeClass($dangerAlertClass);
                     target.value = getMoney(target.value);
                     errors = _.filter(errors, function (item) {
                         return item !== 'price';
@@ -298,23 +307,16 @@
         return pattern.test(email);
     }
 
-    function validationString(string) {
-        var pattern = / +/;
-        return pattern.test(string);
-    }
-
     function modalShow() {
-        $blockScreen.show();
-        $popUp.show();
+        $('html').addClass('pop-up-show');
     }
 
     function modalHide() {
-        $blockScreen.hide();
-        $popUp.hide();
+        $('html').removeClass('pop-up-show');
     }
 
     function getAllGoods(string) {
-        var newStorage = _.cloneDeep(storage.storage);
+        var newStorage = _.cloneDeep(storage.store);
         _.each(newStorage, function (product) {
             product.price = getMoney(product.price + '');
         });
@@ -331,9 +333,10 @@
     }
 
     function addFake() {
-        storage.addGoods('Book1', '123321', 5);
-        storage.addGoods('Book2', '113248', 4);
-        storage.addGoods('Book3', '4564', 10);
+        storage.addGoods('Book1', '123321', 5, null, 'boraicho@epam.com');
+        storage.addGoods('Book2', '113248', 4, null, 'boraicho@epam.com');
+        storage.addGoods('Book3', '4564', 10, null, 'boraicho@epam.com');
+        storage.addGoods('Book4', '4564124124', 10, null, 'boraicho@epam.com');
         storage.addDelivery('USA', ['New York', 'Los Angeles', 'Chicago']);
         storage.addDelivery('Russia', ['Saratov', 'Moscow', 'Samara']);
         storage.addDelivery('Japan', ['Tokyo ', 'Funabashi', 'Kagoshima']);

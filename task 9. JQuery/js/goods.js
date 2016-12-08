@@ -1,5 +1,5 @@
-'use strict';
 function Goods(id, name, price, count, delivery, supplier) {
+    'use strict';
     this.id = id;
     this.name = name;
     this.price = Number(price);

@@ -1,5 +1,5 @@
-'use strict';
-function Delivery(country, cities){
+function Delivery(country, cities) {
+    'use strict';
     this.country = country;
     this.cities = cities;
 }
