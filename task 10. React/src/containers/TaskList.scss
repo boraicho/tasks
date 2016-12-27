@@ -1,0 +1,19 @@
+.task-list, .task-edit {
+    max-height: 300px;
+    min-height: 300px;
+    background-color: #05316D;
+    color: #fff;
+    width: 65%;
+    overflow: auto;
+    padding: 10px 10px 0;
+}
+
+.task {
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 2px solid #4380D3;
+    background-color: #6996D3;
+    overflow: auto;
+    border-radius: 5px;
+    font-size: 25px;
+}

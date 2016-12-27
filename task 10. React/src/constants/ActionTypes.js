@@ -1,0 +1,11 @@
+export const ADD_CATEGORY = 'ADD_CATEGORY';
+export const DELETE_CATEGORY = 'DELETE_CATEGORY';
+export const CHANGE_CATEGORY = 'CHANGE_CATEGORY';
+export const GET_ALL_CATEGORY = 'GET_ALL_CATEGORY';
+export const ADD_SUB_CATEGORY = 'ADD_SUB_CATEGORY';
+
+export const ADD_TASK = 'ADD_TASK';
+export const DELETE_TASK = 'DELETE_TASK';
+export const CHANGE_TASK = 'CHANGE_TASK';
+export const GET_TASK = 'GET_TASK_BY_ID';
+export const GET_TASKS_IN_CATEGORY = 'GET_TASKS_IN_CATEGORY';
