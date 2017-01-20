@@ -1,9 +1,8 @@
 import * as types from '../constants/ActionTypes';
 import _ from 'lodash';
 
-const local = JSON.parse(localStorage.getItem('categories'));
 const InitialState = {
-    categories: local !== null ? local : []
+    categories: []
 };
 
 export default function categories(state = InitialState, action) {

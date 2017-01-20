@@ -1,0 +1,55 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "course C#",
+      "autors": [
+        "Vasya",
+        "Petya",
+        "Misha"
+      ],
+      "time": "156",
+      "date": "21.02.1993"
+    },
+    {
+      "title": "java script",
+      "time": "120",
+      "date": "21.02.2017",
+      "autors": [
+        "Vasya",
+        "Misha",
+        "Olia",
+        "Ulia"
+      ],
+      "id": 2
+    },
+    {
+      "title": "Php + mysql",
+      "time": "160",
+      "date": "21.02.2017",
+      "autors": [
+        "Olia",
+        "Ulia"
+      ],
+      "id": 3
+    },
+    {
+      "title": "course C++",
+      "time": "220",
+      "date": "21.02.2017",
+      "autors": [
+        "Vasya",
+        "Petya",
+        "Misha"
+      ],
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "login": "admin",
+      "password": "admin"
+    }
+  ]
+}

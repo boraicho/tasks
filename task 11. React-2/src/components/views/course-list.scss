@@ -1,0 +1,38 @@
+.course {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0 , 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.course-header {
+    font-size: 18px;
+}
+
+.course-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.course-time {
+    display: inline-block;
+    width: 200px;
+    padding-left: 15px;
+}
+
+.course-body {
+    width: 570px;
+    float: left;
+    padding:5px 15px 0 0;
+}
+
+.course-links {
+    display: inline-block;
+}
+
+.course-links a{
+    display: block;
+    padding-bottom: 10px;
+}
